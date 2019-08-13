@@ -1,0 +1,6 @@
+framework module Pods_WProjection {
+  umbrella header "Pods-WProjection-umbrella.h"
+
+  export *
+  module * { export * }
+}
