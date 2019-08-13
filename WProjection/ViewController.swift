@@ -8,15 +8,10 @@
 
 import UIKit
 import CocoaAsyncSocket
+import SnapKit
 
 class ViewController: UIViewController {
-    let mSearchData = """
-                        M-SEARCH * HTTP/1.1
-                        MAN: "ssdp:discover"
-                        MX: 5
-                        HOST: 239.255.255.250:1900
-                        ST: ssdp:all
-                      """.data(using: .utf8)
+    let mSearchData = "M-SEARCH * HTTP/1.1\r\nMAN: \"ssdp:discover\"\r\nMX: 5\r\nHOST: 239.255.255.250:1900\r\nST: ssdp:all\r\n".data(using: .utf8)
     //ssdp stuff
     var ssdpAddres = "239.255.255.250"
     var ssdpPort: UInt16 = 1900
@@ -26,19 +21,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
+        let button = UIButton()
+        button.backgroundColor = .black
+        self.view.addSubview(button)
+        button.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(100)
+        }
+        button.addTarget(self, action: #selector(onClickSendMsgButton), for: .touchUpInside)
         
+        ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
         try! ssdpSocket.bind(toPort: ssdpPort)
         try! ssdpSocket.beginReceiving()
         try! ssdpSocket.enableBroadcast(true)
         try! ssdpSocket.joinMulticastGroup(ssdpAddres)
         try! ssdpSocket.connect(toHost: ssdpAddres, onPort: ssdpPort)
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        ssdpSocket.send(mSearchData!, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
+    @objc func onClickSendMsgButton() {
+        ssdpSocket.send(mSearchData!, toHost: ssdpAddres, port: ssdpPort, withTimeout: 5, tag: 0)
     }
     
 }
@@ -57,6 +58,10 @@ extension ViewController: GCDAsyncUdpSocketDelegate {
         
         let gotData = String(data: data, encoding: .utf8)!
         print(gotData)
+    }
+    
+    func udpSocket(_ sock: GCDAsyncUdpSocket, didSendDataWithTag tag: Int) {
+        print("button")
     }
     
 }
