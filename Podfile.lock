@@ -1,24 +1,28 @@
 PODS:
   - AEXML (4.4.0)
+  - Alamofire (4.8.2)
   - CocoaAsyncSocket (7.6.3)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
   - AEXML
+  - Alamofire (~> 4.8.2)
   - CocoaAsyncSocket
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AEXML
+    - Alamofire
     - CocoaAsyncSocket
     - SnapKit
 
 SPEC CHECKSUMS:
   AEXML: 16fb739dfb3809e91ebf9e9dc391482c3a6aaebf
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 6331dc55d06631ece8ea042d6715dff5cf82b056
+PODFILE CHECKSUM: 499189b1b649034fe9dc3334f154310585cdf757
 
 COCOAPODS: 1.5.3
