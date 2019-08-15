@@ -13,6 +13,6 @@ target 'WProjection' do
 
   pod 'CocoaAsyncSocket'
   
-  pod 'Alamofire', '~> 4.8.2'
+  pod 'Alamofire'
   
 end
