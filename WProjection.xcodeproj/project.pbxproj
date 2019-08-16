@@ -13,6 +13,7 @@
 		77C918012302524F003B0579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C917FF2302524F003B0579 /* Main.storyboard */; };
 		77C9180323025250003B0579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C9180223025250003B0579 /* Assets.xcassets */; };
 		77C9180623025250003B0579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C9180423025250003B0579 /* LaunchScreen.storyboard */; };
+		77CEEF442306462F00526CB4 /* SSDPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEEF432306462F00526CB4 /* SSDPMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		77C9180223025250003B0579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77C9180523025250003B0579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77C9180723025250003B0579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77CEEF432306462F00526CB4 /* SSDPMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDPMessage.swift; sourceTree = "<group>"; };
 		D37295471C2FC4BF31E8D518 /* Pods_WProjection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WProjection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			children = (
 				77C917FB2302524F003B0579 /* AppDelegate.swift */,
 				77C917FD2302524F003B0579 /* ViewController.swift */,
+				77CEEF432306462F00526CB4 /* SSDPMessage.swift */,
 				77C917FF2302524F003B0579 /* Main.storyboard */,
 				77C9180223025250003B0579 /* Assets.xcassets */,
 				77C9180423025250003B0579 /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77C917FE2302524F003B0579 /* ViewController.swift in Sources */,
+				77CEEF442306462F00526CB4 /* SSDPMessage.swift in Sources */,
 				77C917FC2302524F003B0579 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,18 +11,9 @@ import CocoaAsyncSocket
 import Alamofire
 
 class ViewController: UIViewController {
-    let mSearchData = """
-                        M-SEARCH * HTTP/1.1
-                        HOST: 239.255.255.250:1900
-                        MAN: "ssdp:discover"
-                        MX: 3
-                        ST: urn:schemas-upnp-org:service:AVTransport:1
-                      """.data(using: .utf8)
-    
     var ssdpAddress = "239.255.255.250"
     var ssdpPort: UInt16 = 1900
     var ssdpSocket: GCDAsyncUdpSocket!
-    var ssdpSocketRec: GCDAsyncUdpSocket!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +43,7 @@ class ViewController: UIViewController {
     
     /// SSDP搜索设备
     func sendSSDPSearchData() {
-        ssdpSocket.send(mSearchData!, toHost: ssdpAddress, port: ssdpPort, withTimeout: 1, tag: 0)
+        ssdpSocket.send(SSDPMessage.searchData, toHost: ssdpAddress, port: ssdpPort, withTimeout: 1, tag: 0)
     }
     
 }
